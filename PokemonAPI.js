@@ -9,18 +9,30 @@ xhr.addEventListener("load", function(){
 	let $containerCartas = document.getElementById('container')
 	
 	
+	
+	
 	for(let i=0; i<arrayDePokemons.length; i++){
 
-		
-	       var $nome= document.createTextNode("Nome:"+ arrayDePokemons[i].name);	  
-               var $li = document.createElement('li');
-                  $li.appendChild($nome);
+			  
+            
+				var $nome= document.createTextNode("Nome:"+ arrayDePokemons[i].name);
+                    var $li = document.createElement('li'); 
+                    $li.appendChild($nome);
                 var $artist= document.createTextNode("Artista:"+ arrayDePokemons[i].artist);
                 $li.appendChild($artist);
                 var $types = document.createTextNode("Tipo:"+arrayDePokemons[i].types);
                 $li.appendChild($types);
                 var $text = document.createTextNode("Texto:"+arrayDePokemons[i].text);
-                $li.appendChild($text);
+                $li.appendChild($text); 
+
+let $img = document.createElement('img')
+	let $src = document.createAttribute('src')
+				$src.value = arrayDePokemons[i].imageUrl;
+
+
+				$img.setAttributeNode(src);
+
+			$li.appendChild($img);
                 $containerCartas.appendChild($li);
 
 
